@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int i, j, n, m;
+	int a[10][10];
+	cout << " nhap cot ";
+	cin >> n;
+	cout << " nhap dong ";
+	cin >> m;
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << " nhap a[" << i << "][" << j << "]=";
+			cin >> a[i][j];
+		}
+	}
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << " " << a[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "==============="<<endl;
+	int tg;
+	for (i = 1;i <= n;i++) {
+
+		for (j = 1;j <= m;j++) {
+			for (int k = j + 1;k <= m;k++) {
+				if (a[i][j]  < a[i][k]) {
+					tg = a[i][j];
+					a[i][j] = a[i][k];
+					a[i][k] = tg;
+				}
+			}
+
+		}
+	}
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << " " << a[i][j];
+		}
+		cout << endl;
+	}
+}
