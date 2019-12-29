@@ -1,0 +1,72 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int i, j, n;
+	int a[100][100];
+	cout << " nhap so hang, cot ";
+	cin >> n;
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= n;j++) {
+			cout << " nhap a[" << i << "][" << j << "]=";
+			cin >> a[i][j];
+		}
+	}
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= n;j++) {
+			cout << setw(5) << a[i][j];
+		}
+		cout << endl;
+	}
+	int max = a[1][1];
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= n;j++) {
+			if (a[i][j] > max) {
+				max = a[i][j];
+			}
+		}
+	}
+	int b[100];
+	int c[100];
+	int k;int p;
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= n;j++) {
+			if (a[i][j] == max) {
+
+				cout << " A[" << i << "][" << j << "]" << ", ";
+				k = i;
+				p = j;
+			}
+		}
+	}
+	for (i = 1;i <= n;i++) {
+		b[i] = a[i][p];
+	}
+	for (j = 1;j <= n;j++) {
+		c[j] = a[k][j];
+	}
+
+	cout << endl;
+	cout << " vecto b( ";
+	for (i = 1;i <= n;i++) {
+		cout << b[i] << " , ";
+	}
+	cout << " ) ";
+	cout << endl;
+	cout << " vecto c( ";
+	for (j = 1;j <= n;j++) {
+		cout << c[j] << " , ";
+	}
+	cout << " ) ";
+	int d[100];
+	for (i = 1;i <= n;i++) {
+		d[i] = c[i] * b[i];
+	}
+	int tichvohuong=0;
+	for (i = 1;i <= n;i++) {
+		tichvohuong = tichvohuong + d[i];
+	}
+	cout << endl;
+	cout << " tich vo huong cua vecto hang , cot chua max la " << tichvohuong;
+
+}
