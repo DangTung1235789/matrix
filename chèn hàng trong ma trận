@@ -1,0 +1,42 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int i, j, n, m;
+	int a[100][100];
+	cout << " nhap so hang ";
+	cin >> n;
+	cout << " nhap so cot ";
+	cin >> m;
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << " nhap a[" << i << "][" << j << "]=";
+			cin >> a[i][j];
+		}
+	}
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << setw(5) << a[i][j];
+		}
+		cout << endl;
+	}
+	int b[100];
+	int k;
+	for (k = 1;k <= m;k++) {
+		cout << " nhap b[" << k << "]=";
+		cin >> b[k];
+
+	}
+	int t;
+	cout << " nhap hang can thay ";
+	cin >> t;
+	for (j = 1;j <= n;j++) {
+		a[t][j] = b[j];
+	}
+	for (i = 1;i <= n;i++) {
+		for (j = 1;j <= m;j++) {
+			cout << setw(5) << a[i][j];
+		}
+		cout << endl;
+	}
+}
